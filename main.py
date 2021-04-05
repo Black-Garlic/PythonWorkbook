@@ -52,8 +52,8 @@ def a06():
     average = total / 3
     print("입력하신 점수의 총점은,", total, "이고,")
     print("평균은", round(average, 1), "입니다.")
-    
-    
+
+
 # 파일 용량 계산
 def a07():
     gigabytes = int(input("파일 용량을 기가바이트 단위로 입력하세요. "))
@@ -106,19 +106,19 @@ def b03():
     height = int(input("직사각형의 세로 크기를 입력하시오. "))
     area = width * height
     print("직사각형의 넓이는", area, "이고")
-    
+
     if width == height:
         print("정사각형입니다")
     else:
         print("정사각형이 아닙니다")
-    
+
 
 # 아파트 평형 계산 및 종류 판정
 def b04():
     m2_area = float(input("아파트의 분양 면적을 입력하시오. "))
     pyung_area = m2_area / 3.305
     print("아파트의 평형은", round(pyung_area, 1), "이고")
-    
+
     if pyung_area < 30:
         print("30평 미만이므로 작은 아파트입니다")
     else:
@@ -131,7 +131,7 @@ def b05():
     seconds = days * 24 * 60 * 60
     m_count = int(seconds / 1000000)
     print("날 수에 해당되는 시간은 모두", seconds, "초 입니다")
-    
+
     if m_count > 0:
         print("100만 초가 모두", m_count, "번 포함됩니다")
 
@@ -145,7 +145,7 @@ def b06():
     average = total / 3
     print("입력하신 점수의 총점은,", total, "이고,")
     print("평균은", round(average, 1), "입니다.")
-    
+
     if kor >= 90:
         print("국어 점수가 우수합니다.")
     if eng >= 90:
@@ -183,7 +183,8 @@ def b08():
     if num1 + num2 == num3 or num2 + num3 == num1 or num1 + num3 == num2:
         print("3번 조건 만족 : 3개의 숫자 중 어떤 두 수의 합이 나머지 하나의 숫자와 같아")
 
-    if (num1 % num2 == 0 and num3 % num2 == 0) or (num1 % num3 == 0 and num2 % num3 == 0) or (num2 % num1 == 0 and num3 % num1 == 0):
+    if (num1 % num2 == 0 and num3 % num2 == 0) or (num1 % num3 == 0 and num2 % num3 == 0) or (
+            num2 % num1 == 0 and num3 % num1 == 0):
         print("4번 조건 만족 : 3개의 숫자 중 어떤 하나의 수로 다른 두 수를 나누면 나누어 떨어지는 경우가 있다")
 
 
@@ -192,7 +193,7 @@ def b09():
     height = int(input("신장(cm단위)을 입력하세요 ")) * 0.01
     weight = int(input("체중(kg단위)을 입력하세요 "))
     bmi = weight / (height * height)
-    
+
     if bmi >= 25:
         print("당신은 비만입니다")
     else:
