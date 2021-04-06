@@ -200,5 +200,240 @@ def b09():
         print("당신은 비만이 아닙니다")
 
 
+# 복합 조건문 사용하기
+# 예시
+def c00():
+    num1, num2 = input("숫자 2개를 입력하시오. ").split()
+    num1 = int(num1)
+    num2 = int(num2)
+    if num1 > num2:
+        print("첫 번째 숫자가 두 번째 숫자보다 큽니다.")
+    elif num1 < num2:
+        print("두 번째 숫자가 첫 번째 숫자보다 큽니다.")
+    else:
+        print("두 수는 같습니다.")
+
+
+# 나이 계산 및 연령대 판정
+def c01():
+    birth_year = int(input("태어난 년도를 입력하세요 "))
+    age = 2021 - birth_year + 1
+    print(age)
+
+    if age < 7:
+        print("유아입니다")
+    elif 7 <= age < 13:
+        print("어린이입니다")
+    elif 13 <= age < 20:
+        print("청소년입니다")
+    elif 20 <= age < 30:
+        print("청년입니다")
+    elif 30 <= age < 60:
+        print("중년입니다")
+    else:
+        print("노년입니다")
+
+
+# 물의 온도 구간 판정
+def c02():
+    input_degree = float(input("물의 온도를 입력하세요 "))
+
+    if 0 <= input_degree < 25:
+        print("냉수입니다")
+    elif 25 <= input_degree < 40:
+        print("미온수입니다")
+    elif 40 <= input_degree < 80:
+        print("온수입니다")
+    elif 80 <= input_degree:
+        print("끓는물입니다")
+    else:
+        print("잘못 입력하셨습니다")
+
+
+# 직사각형 형태 판정
+def c03():
+    width = int(input("직사각형의 가로 크기를 입력하세요 "))
+    height = int(input("직사각형의 세로 크기를 입력하세요 "))
+    
+    if width == height:
+        print("정사각형입니다")
+    elif width >= height * 2:
+        print("좌우로 길쭉한 직사각형입니다")
+    elif height >= width * 2:
+        print("위아래로 길쭉한 직사각형입니다")
+    elif width > height:
+        print("일반적인 가로형 직사각형입니다")
+    elif height > width:
+        print("일반적인 세로형 직사각형입니다")
+
+
+# 아파트 평형 계산 및 종류 판정
+def c04():
+    m2_area = int(input("아파의 분양 면적(제곱미터)를 입력하세요 "))
+    pyung_area = m2_area / 3.305
+    print("아파트의 평형은", round(pyung_area, 1) , "입니다")
+    
+    if pyung_area < 15:
+        print("소형 아파트입니다")
+    elif 15 <= pyung_area < 30:
+        print("중소형 아파트입니다")
+    elif 30 <= pyung_area < 50:
+        print("중형 아파트입니다")
+    else:
+        print("대형 아파트입니다")
+
+
+# 연중 날짜 계산
+def c05():
+    month = int(input("월을 입력하세요 "))
+    day = int(input("일을 입력하세요 "))
+
+    if month > 12:
+        print("잘못 입력하셨습니다")
+    else:
+        day_count = day
+
+        if month > 1:
+            day_count += 31
+        if month > 2:
+            day_count += 28
+        if month > 3:
+            day_count += 31
+        if month > 4:
+            day_count += 30
+        if month > 5:
+            day_count += 31
+        if month > 6:
+            day_count += 30
+        if month > 7:
+            day_count += 31
+        if month > 8:
+            day_count += 31
+        if month > 9:
+            day_count += 30
+        if month > 10:
+            day_count += 31
+        if month > 11:
+            day_count += 30
+
+        print("이 날짜는 1년 중", day_count, "번째 날에 해당됩니다")
+
+
+# 점수 계산
+def c06():
+    kor = int(input("국어 점수를 입력하세요 "))
+    eng = int(input("영어 점수를 입력하세요 "))
+    math = int(input("수학 점수를 입력하세요 "))
+
+    total = kor + eng + math
+    average = total / 3
+    
+    print("입력하신 점수의 총점은", total, "이고")
+    print("평균은", round(average, 1), "입니다")
+
+    if 90 <= average:
+        print("수 입니다")
+    elif 80 <= average < 90:
+        print("우 입니다")
+    elif 70 <= average < 80:
+        print("미 입니다")
+    elif 60 <= average < 70:
+        print("양 입니다")
+    else:
+        print("가 입니다")
+
+
+# 파일 전송 시간 계산
+def c07():
+    megabytes = int(input("파일 용량을 메가바이트 단위로 입력하세요 "))
+    kind = int(input("전송 방식을 1: Wi-Fi, 2: BlueTooth, 3: LTE, 4: USB 에서 선택하여 입력하세요 "))
+
+    bytes = megabytes * 1024 * 1024
+
+    if kind == 1:
+        time = bytes / 1500000
+    elif kind == 2:
+        time = bytes / 300000
+    elif kind == 3:
+        time = bytes / 1000000
+    else:
+        time = bytes / 60000000
+    
+    print("파일 전송 시간은", round(time, 1), "초 입니다")
+
+
+# 3개의 수 중 최댓값과 최솟값 구하기
+def c08():
+    num1 = int(input("첫번째 숫자를 입력하세요 "))
+    num2 = int(input("두번째 숫자를 입력하세요 "))
+    num3 = int(input("세번째 숫자를 입력하세요 "))
+
+    max_num = num1
+    min_num = num1
+    
+    if max_num < num2:
+        max_num = num2
+    if max_num < num3:
+        max_num = num3
+        
+    if min_num > num2:
+        min_num = num2
+    if min_num > num3:
+        min_num = num3
+        
+    print("가장 큰 수는", max_num, "이고 가장 작은 수는", min_num, "입니다")
+
+
+# 소득세 계산
+def c09():
+    income = int(input("연봉(원 단위)을 숫자로 입력하세요 "))
+
+    if 80000000 <= income:
+        tax = income * 0.37
+    elif 40000000 <= income < 80000000:
+        tax = income * 0.28
+    elif 10000000 <= income < 40000000:
+        tax = income * 0.19
+    else:
+        tax = income * 0.095
+        
+    print("연봉 금액에 대한 소득세는", int(tax), "원 입니다")
+
+
+# 간단한 사칙연산 계산기
+def c10():
+    num1 = int(input("숫자 1을 입력하세요 "))
+    num2 = int(input("숫자 2을 입력하세요 "))
+    operator = input("연산기호문자를 입력하세요 ")
+    
+    if operator == '+':
+        result = num1 + num2
+    elif operator == '-':
+        result = num1 - num2
+    elif operator == '*':
+        result = num1 * num2
+    elif operator == '/' and num2 != 0:
+        result = num1 / num2
+    else:
+        result = 'error'
+        
+    print("계산식의 결과 값은", result, "입니다")
+
+
+# 윤년 판정하기
+def c11():
+    year = int(input("년도를 입력하세요 "))
+    
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("윤년입니다")
+        else:
+            print("윤년이 아닙니다")
+    elif year % 4 == 0:
+        print("윤년입니다")
+    else:
+        print("윤년이 아닙니다")
+
+
 if __name__ == '__main__':
-    b09()
+    c11()
